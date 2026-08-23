@@ -15,43 +15,54 @@ public class Janken{
 
 
 	public static void main(String[]args){
+		//プレイヤーの入力を受け付け
 		Scanner scanner = new Scanner(System.in);
+		
+		//CPUのランダムな手を作成
 		Random random = new Random();
 
-		System.out.println("じゃんけんゲーム");
-		System.out.println();
+		//再戦するか
+		boolean playAgain = true;
 
+		while (playAgain){
+			System.out.println("じゃんけんゲーム");
+			System.out.println();
+			
+			System.out.println("1:グー");
+			System.out.println("2:チョキ");
+			System.out.println("3:パー");
+			System.out.println();
 		
-		System.out.println("1:グー");
-		System.out.println("2:チョキ");
-		System.out.println("3:パー");
-		System.out.println();
+			System.out.println("番号を入力してください");
 		
-		System.out.println("番号を入力してください");
-		
-		int playerHand = scanner.nextInt();
-		int cpuHand = random.nextInt(3) + 1;
+			int playerHand = scanner.nextInt();
+			int cpuHand = random.nextInt(3) + 1;
 
-		String playerHandName = getHandName(playerHand);
-		String cpuHandName = getHandName(cpuHand);
+			String playerHandName = getHandName(playerHand);
+			String cpuHandName = getHandName(cpuHand);
 
-		System.out.println("あなた：" + playerHandName);
-                System.out.println("CPU:" + cpuHandName);
+			System.out.println("あなた：" + playerHandName);
+                	System.out.println("CPU:" + cpuHandName);
 
-		//判定
-	        if (playerHand == cpuHand){
-			System.out.println("あいこです！");
-		}else if ((playerHand ==1 && cpuHand ==2)||(playerHand == 2 && cpuHand == 3)||(playerHand == 3 && cpuHand == 1))
-				{
-					System.out.println("あなたの勝ち！");
-				}else{
-					System.out.println("あなたの負け！");
-				}
-	
-		scanner.close();
+			//判定
+	        	if (playerHand == cpuHand){
+				System.out.println("あいこです！");
+			}else if ((playerHand ==1 && cpuHand ==2)||(playerHand == 2 && cpuHand == 3)||(playerHand == 3 && cpuHand == 1))
+					{
+						System.out.println("あなたの勝ち！");
+					}else{
+						System.out.println("あなたの負け！");
+					}
+			System.out.println("もう一度遊びますか？");
+			System.out.println("「はい」ならy/「いいえ」nを入力）");
 
+			String answer = scanner.next();
 
+			if (answer.equals("n")){
+				playAgain = false;
+			}
+		}
+			scanner.close();
 
-
+		}
 	}
-}
