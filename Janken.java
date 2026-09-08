@@ -54,7 +54,7 @@ public class Janken{
 						System.out.println("あなたの負け！");
 					}
 			System.out.println("もう一度遊びますか？");
-			System.out.println("「はい」ならy/「いいえ」nを入力）");
+			System.out.println("y/n");
 
 			String answer = scanner.next();
 
