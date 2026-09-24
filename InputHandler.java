@@ -15,12 +15,13 @@ public class InputHandler{
 
 			//数字かどうかの判定
 			if (input.equals("1")||input.equals("2")||input.equals("3")){
-				return Integger.parseInt(input);}
+				return Integer.parseInt(input);
+			}
 			System.out.println("1~3の数字を入力してください");
 		}
 	}
 	//再戦するか否かの入力
-	public boolean getplayAgain(){
+	public boolean getPlayAgain(){
 		while (true){
 			System.out.println("もう一度あそぶ？");		
 			System.out.println("あそぶ！=y/やめる！=n");
@@ -28,10 +29,10 @@ public class InputHandler{
 			String answer = scanner.next();
 			if (answer.equalsIgnoreCase("y")){
 				return true;
-			}else if (amswer.equalsIgnoreCase("n")){
+			}else if (answer.equalsIgnoreCase("n")){
 				return false;
 			}
-			System.oyt.println("yまたはnを入力してください");
+			System.out.println("yまたはnを入力してください");
 		}
 	}
 	//Scannerを閉じる

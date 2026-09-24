@@ -19,8 +19,8 @@ public class Janken{
 		Random random = new Random();
 
 		//入力処理
-		InputHandler inputHandler = new InpuHamdler();
-		boolean playAgein = true;
+		InputHandler inputHandler = new InputHandler();
+		boolean playAgain = true;
 
 		while (playAgain){
 			//プレイヤーの手を取得
@@ -50,7 +50,7 @@ public class Janken{
 			playAgain = inputHandler.getPlayAgain();
 		}
 		//ゲーム終了時にscannerを閉じる
-		inputHandler.clase();
+		inputHandler.close();
 		System.out.println("またね！");
 
 		}
